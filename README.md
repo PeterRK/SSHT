@@ -1,5 +1,5 @@
 # Static Set-associative Hashtable.
-It's optimized for heavy query situation, like sparse DNN feature searching. This solution can provide sub-billion level QPS per machine.
+It's optimized for heavy query situation, like sparse DNN feature searching. This solution can provide sub-billion level QPS on single machine.
 
 ![](throughput.png)
 
