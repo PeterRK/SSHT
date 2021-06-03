@@ -241,7 +241,7 @@ static FORCE_INLINE unsigned BatchProcess(unsigned batch, const Hashtable::View&
 }
 
 
-unsigned Hashtable::batch_search(unsigned batch, const uint8_t* keys[], const uint8_t* out[],
+unsigned Hashtable::batch_search(unsigned batch, const uint8_t* const keys[], const uint8_t* out[],
 								 const Hashtable* patch) const noexcept {
 	if (!*this || keys == nullptr || out == nullptr) {
 		return 0;
@@ -255,8 +255,8 @@ unsigned Hashtable::batch_search(unsigned batch, const uint8_t* keys[], const ui
 						});
 }
 
-unsigned Hashtable::batch_fetch(unsigned batch, const uint8_t* keys, uint8_t* data,
-								const uint8_t* dft_val, const Hashtable* patch) const noexcept {
+unsigned Hashtable::batch_fetch(unsigned batch, const uint8_t* __restrict__ keys, uint8_t* __restrict__ data,
+								const uint8_t* __restrict__ dft_val, const Hashtable* patch) const noexcept {
 	if (!*this || keys == nullptr || data == nullptr || m_view.type != Hashtable::KV_INLINE) {
 		return 0;
 	}
