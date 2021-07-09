@@ -39,8 +39,8 @@ target_link_libraries(ssht pthread)
 file(GLOB test_src
     test/*.cc
 )
-add_executable(test ${test_src})
-target_link_libraries(test pthread gtest ssht)
+add_executable(ssht-test ${test_src})
+target_link_libraries(ssht-test pthread gtest ssht)
 
 add_executable(bench-billion benchmark/billion.cc)
 target_link_libraries(bench-billion pthread gflags ssht)
