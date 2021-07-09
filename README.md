@@ -3,8 +3,6 @@ It's optimized for heavy query situation, like sparse DNN feature searching. Thi
 
 ![](throughput.png)
 
-Benchmark was done on Tencent cloud and Huawei cloud.
-
 ### Key Features
 * extreme read performance
 * low space overhead (1 byte per item + 6.25% data size)
@@ -12,8 +10,8 @@ Benchmark was done on Tencent cloud and Huawei cloud.
 * work on CPU support little-endian unaligned memory access (X86，ARM，RISC-V...)
 
 ### Other Solutions
-* [the one with extreme low space overhead](https://github.com/PeterRK/fastCHD)
-* [the one with online writing](https://github.com/PeterRK/estuary)
+* [low space overhead](https://github.com/PeterRK/fastCHD)
+* [online writable](https://github.com/PeterRK/estuary)
 
 ---
 [【Chinese】](README-CN.md) [【English】](README.md)
