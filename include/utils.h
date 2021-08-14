@@ -211,7 +211,7 @@ public:
 
 	Word div(Word m) const noexcept {
 #ifdef DISABLE_SOFT_DIVIDE
-		return m / _n;
+		return m / m_val;
 #else
 		Word t = (m * (DoubleWord)m_fac) >> BITWIDTH;
 		t += (m - t) >> 1U;
@@ -224,7 +224,7 @@ public:
 
 	 Word mod(Word m) const noexcept {
 #ifdef DISABLE_SOFT_DIVIDE
-		return m % _n;
+		return m % m_val;
 #else
 		Word t = (m * (DoubleWord)m_fac) >> BITWIDTH;
 		t += (m - t) >> 1U;
