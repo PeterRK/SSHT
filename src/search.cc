@@ -108,7 +108,7 @@ Slice Hashtable::search(const uint8_t* key) const noexcept {
 		return {field, m_view.val_len};
 	}
 	auto off = ReadOffsetField(field);
-	return SeparatedValue(m_view.extend+ReadOffsetField(field), m_view.space_end);
+	return SeparatedValue(m_view.extend+off, m_view.space_end);
 }
 
 
@@ -266,7 +266,7 @@ unsigned Hashtable::batch_fetch(unsigned batch, const uint8_t* __restrict__ keys
 						[keys, key_len](unsigned idx)->const uint8_t*{
 							return keys + idx*key_len;
 						},
-						[data, dft_val, val_len](unsigned idx, const uint8_t* val) {
+						[data, val_len](unsigned idx, const uint8_t* val) {
 							auto out = data + idx*val_len;
 							if (val != nullptr) {
 								memcpy(out, val, val_len);
